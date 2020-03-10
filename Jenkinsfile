@@ -12,5 +12,15 @@ pipeline {
           echo "welcome come to stage two"
         }
        }
+       stage("three") {
+          when {
+             not {
+               branch "master"
+             }
+            }
+          steps {
+           echo "welcome to steps 3"  
+          }
+       }
   }
 }
